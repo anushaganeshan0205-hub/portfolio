@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anusha Ganeshan - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Modal Styles for Live Demo */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1000; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.5); 
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; 
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; 
+      max-width: 500px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover { color: #000; }
+    #weather-display { margin-top: 20px; padding: 10px; background: #f9f9f9; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Hi, I'm Anusha Ganeshan</h1>
+    <p>I'm a passionate developer</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a BCA student with a strong passion for coding and problem-solving. I have a passion to work in the IT industry, am a quick learner, adapt to changes easily, and have leadership qualities to finish projects with excellent team coordination. </p>
+    <p>Learnt programming languages such as python,java,c,c++.And done courses such as Agentic ai,Web  development,Software testing.</p>
+    
+    <div class="highlight-section">
+      <h3>Education:</h3>
+    <p>PUC (ABEC) at ASC PU College  </p>
+      <p>Bachelor of Computer Applications (BCA) at Kle Society's S.Nijalingappa College</p>
+      
+      <h3>Skills:</h3>
+      <ul>
+        <li><strong>Languages:</strong> Python, Java, C, C++,HTML</li>
+        <li><strong>Certification Course:</strong> Agentic AI, Web Development, Software Testing, Networking</li>
+      </ul>
+    </div>
+   </section>
+
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>E-commerce Website</h3>
+        <p>A full-stack e-commerce website built with the MERN stack (MongoDB, Express, React, Node.js). Features include user authentication, product catalog, shopping cart, and a checkout process with Stripe integration.</p>
+        <a href="#" id="ecommerce-demo-btn">Live Demo</a>
+      </div>
+      <div class="project">
+        <h3>Weather Dashboard</h3>
+        <p>A responsive web application that displays the current weather and a 5-day forecast for a searched city using the OpenWeatherMap API. Built with HTML, CSS, and vanilla JavaScript.</p>
+        <a href="#" id="weather-demo-btn">Live Demo</a>
+      </div>
+      <div class="project">
+          <h3>Task Management App</h3>
+          <p>A simple and intuitive task management application to help users organize their daily tasks. Developed using Vue.js for the frontend and Firebase for backend services and authentication.</p>
+          <a href="#" id="task-demo-btn">Live Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new projects, creative ideas, or opportunities.</p>
+        <p><strong>Email:</strong> anushaganeshan0205@gmail.com</p>
+        <p><strong>Phone:</strong> (123) 456-7890</p>
+      </div>
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Anusha Ganeshan. All rights reserved.</p>
+  </footer>
+
+  <!-- Weather Dashboard Modal -->
+  <div id="weather-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="weather-close">&times;</span>
+      <h3>Weather Dashboard</h3>
+      <input type="text" id="city-input" placeholder="Enter city name" style="padding: 8px; width: 60%;">
+      <button id="search-btn" style="padding: 8px;">Search</button>
+      <div id="weather-display">Weather details will appear here.</div>
+    </div>
+  </div>
+
+  <!-- Task Management Modal -->
+  <div id="task-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="task-close">&times;</span>
+      <h3>Task Management App</h3>
+      <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <input type="text" id="task-input" placeholder="Add a new task" style="flex: 1; padding: 8px;">
+        <button id="add-task-btn" style="padding: 8px;">Add</button>
+      </div>
+      <ul id="task-list" style="list-style: none; padding: 0; text-align: left;">
+        <!-- Tasks will be added here -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- E-commerce Modal -->
+  <div id="ecommerce-modal" class="modal">
+    <div class="modal-content" style="max-width: 600px;">
+      <span class="close" id="ecommerce-close">&times;</span>
+      <h3>E-commerce Demo</h3>
+      <div style="display: flex; gap: 20px; text-align: left;">
+        <div style="flex: 2;">
+          <h4>Products</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px;">
+            <div style="border: 1px solid #ddd; padding: 10px; text-align: center; border-radius: 4px;">
+              <p style="margin: 5px 0;">Laptop</p>
+              <p style="margin: 5px 0; font-weight: bold;">$999</p>
+              <button class="add-to-cart" data-price="999" style="padding: 5px; cursor: pointer;">Add</button>
+            </div>
+            <div style="border: 1px solid #ddd; padding: 10px; text-align: center; border-radius: 4px;">
+              <p style="margin: 5px 0;">Phone</p>
+              <p style="margin: 5px 0; font-weight: bold;">$699</p>
+              <button class="add-to-cart" data-price="699" style="padding: 5px; cursor: pointer;">Add</button>
+            </div>
+             <div style="border: 1px solid #ddd; padding: 10px; text-align: center; border-radius: 4px;">
+              <p style="margin: 5px 0;">Headphones</p>
+              <p style="margin: 5px 0; font-weight: bold;">$199</p>
+              <button class="add-to-cart" data-price="199" style="padding: 5px; cursor: pointer;">Add</button>
+            </div>
+          </div>
+        </div>
+        <div style="flex: 1; border-left: 1px solid #eee; padding-left: 20px;">
+          <h4>Cart</h4>
+          <p>Items: <span id="cart-count">0</span></p>
+          <p>Total: $<span id="cart-total">0</span></p>
+          <button onclick="alert('Checkout feature coming soon!')" style="width: 100%; padding: 5px; margin-top: 10px; background-color: #3498db; color: white; border: none; cursor: pointer;">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
